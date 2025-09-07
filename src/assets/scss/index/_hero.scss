@@ -1,0 +1,240 @@
+@use "../global/variables" as *;
+.intro {
+    position: relative;
+
+    &__content {
+        background: #000;
+    }
+
+    .inslide {
+        min-height: 100vh;
+        opacity: 0 !important;
+        visibility: hidden;
+        transition: 0.3s;
+
+        &__video {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            filter: brightness(0.6);
+
+            &-overlay {
+                &::after {
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
+                    content: "";
+                }
+            }
+        }
+
+        &__content {
+            position: relative;
+            z-index: 3;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        &__title {
+            font-size: 92px;
+            width: 60%;
+            font-weight: 900;
+            line-height: 1.1;
+            color: #fafafa;
+            transition: 1.2s;
+            transform: translateY(50px);
+            opacity: 0;
+            margin: 50px 0 0 0;
+
+            span {
+                color: $primary;
+            }
+        }
+
+        &__desc {
+            font-size: 20px;
+            color: #e9e9e9;
+            width: 45%;
+            line-height: 1.8;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        &__actions {
+            display: flex;
+            gap: 15px;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        &.swiper-slide-active {
+            opacity: 1 !important;
+            visibility: visible;
+
+            .inslide {
+                &__title {
+                    animation: fadeUp 1s ease-in-out 1 forwards;
+                }
+                &__desc {
+                    animation: fadeUp 1s 0.5s ease-in-out 1 forwards;
+                }
+                &__actions {
+                    animation: fadeUp 1s 1s ease-in-out 1 forwards;
+                }
+            }
+        }
+
+        &__navigation {
+            position: absolute;
+            z-index: 5;
+            bottom: 50px;
+            right: calc((100% - 1440px) / 2);
+            display: flex;
+            gap: 15px;
+            opacity: 0.6;
+
+            &-prev,
+            &-next {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 60px;
+                height: 60px;
+                // border-radius: 100
+                border: 1px solid #fff;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+                &:active {
+                    transform: scale(1);
+                }
+            }
+
+            &-prev {
+                transform: rotate(180deg);
+
+                &:hover {
+                    transform: rotate(180deg) scale(1.1);
+                }
+                &:active {
+                    transform: rotate(180deg) scale(1);
+                }
+            }
+        }
+    }
+
+    // .swiper-button-prev,
+    // .swiper-button-next {
+    //     display: none !important;
+    // }
+
+    .swiper-pagination {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        left: unset !important;
+        z-index: 3;
+        gap: 15px;
+        top: 50% !important;
+        right: 50px !important;
+        width: 20px !important;
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            opacity: 0.5;
+            border-radius: 50%;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            &.swiper-pagination-bullet-active {
+                background-color: $primary;
+                width: 20px;
+                height: 20px;
+                opacity: 1;
+            }
+        }
+    }
+
+    .swiper {
+        z-index: 2;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .intro {
+        .inslide {
+            &__title {
+                font-size: 72px;
+                width: 85%;
+            }
+            &__desc {
+                width: 65%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .intro {
+        .inslide {
+            &__title {
+                font-size: 52px;
+                width: 90%;
+            }
+            &__desc {
+                width: 65%;
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .intro {
+        .inslide {
+            &__title {
+                font-size: 42px;
+                width: 100%;
+            }
+            &__desc {
+                width: 100%;
+                font-size: 16px;
+            }
+            &__actions {
+                flex-wrap: wrap;
+            }
+        }
+        .swiper-pagination {
+            top: 80% !important;
+            flex-direction: row !important;
+            width: unset !important;
+        }
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

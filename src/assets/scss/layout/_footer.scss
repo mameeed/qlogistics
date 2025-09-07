@@ -1,0 +1,220 @@
+@use "../global/variables" as *;
+
+.footer {
+    padding: 60px 0 0 0;
+    box-shadow: 0 -5px 40px -5px rgba(#000, 0.05);
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    &__about {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 20%;
+
+        &-logo {
+            height: 50px;
+            display: flex;
+            object-fit: contain;
+            margin: 0 0 20px 0;
+        }
+
+        &-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: $text-secondary;
+            margin: 0 0 24px 0;
+        }
+    }
+
+    &__social {
+        margin-top: auto;
+        display: flex;
+        gap: 20px;
+    }
+
+    &__links-wrapper {
+        display: flex;
+        gap: 50px;
+        padding: 0 50px;
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+
+    &__links {
+        h3 {
+            font-size: 24px;
+            line-height: 1.2;
+            color: $text;
+            margin: 0 0 24px 0;
+        }
+    }
+
+    &__links-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        a {
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            padding-bottom: 5px;
+            color: $text;
+            font-size: 16px;
+
+            &::after {
+                content: "";
+                background: $primary;
+                height: 2px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                transform: translate3d(-100%, 0, 0);
+                width: 100%;
+            }
+            &:hover,
+            &.active {
+                &::after {
+                    animation: link-hoverstate 0.7s linear forwards;
+                    animation-timing-function: linear;
+                    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+            }
+        }
+    }
+
+    &__contacts {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        padding: 0 0 0 20px;
+        transition: 0.3s;
+
+        strong {
+            font-size: 12px;
+            color: $primary;
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            width: 16px;
+        }
+
+        &:hover {
+            color: rgba($text, 0.4);
+        }
+    }
+
+    &__copyright {
+        margin: 60px 0 0 0;
+        border-top: 1px solid rgba(#000, 0.1);
+        padding: 15px 0 25px 0;
+
+        &-content {
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-text {
+            font-size: 14px;
+            color: rgba($text-secondary, 0.5);
+        }
+
+        &-dev {
+            font-size: 10px;
+            color: #8e8e8e;
+            font-family: monospace;
+
+            a {
+                color: #333;
+                transition: 0.3s;
+                font-family: monospace;
+
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .footer {
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__links-wrapper {
+            padding: 0;
+        }
+        &__about {
+            width: 100%;
+        }
+        &__contacts {
+            width: 100%;
+        }
+        &__links {
+            margin: 0 0 50px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        &__inner {
+        }
+        &__about {
+            width: 100%;
+            align-items: center;
+            &-text {
+                width: 80%;
+                text-align: center;
+            }
+        }
+        &__contacts {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            a {
+                text-align: center;
+                width: 90%;
+            }
+        }
+        &__links {
+            margin: 0;
+        }
+        &__links-wrapper {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            .footer__links {
+                width: 40%;
+                &:nth-child(3) {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}

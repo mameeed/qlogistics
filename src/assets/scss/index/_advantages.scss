@@ -1,0 +1,116 @@
+@use "../global/variables" as *;
+.advantages {
+    padding: 90px 0 45px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        margin: 0 0 48px;
+    }
+    &__title {
+        font-size: 44px;
+        line-height: 1.2;
+        text-align: center;
+        color: $text;
+    }
+    &__description {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        color: $text-secondary;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        // gap: 2px;
+    }
+    &__item {
+        position: relative;
+        padding: 35px;
+        transition: all $transition-duration ease-in-out;
+        background: $bg-color;
+
+        &:nth-child(1),
+        &:nth-child(3),
+        &:nth-child(6),
+        &:nth-child(8) {
+            background: rgba($primary, 0.05);
+        }
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
+    &__icon {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin: 0 0 20px;
+        animation: movingIcon 5s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    &__item-title {
+        font-size: 20px;
+        line-height: 1.2;
+        margin-bottom: 14px;
+        color: $text;
+    }
+    &__item-description {
+        font-size: 16px;
+        line-height: 1.5;
+        color: $text-secondary;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .advantages {
+        padding: 45px 0 15px;
+        &__title {
+            font-size: 36px;
+        }
+        &__description {
+            font-size: 16px;
+        }
+        &__item {
+            padding: 20px;
+            &:hover {
+                transform: scale(1);
+            }
+        }
+        &__icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+        }
+        &__item-title {
+            padding: 6px 0 8px 45px;
+            font-size: 18px;
+        }
+        &__item-description {
+            font-size: 14px;
+        }
+    }
+}
+
+@keyframes movingIcon {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(6deg) scale(1.15);
+    }
+    50% {
+        transform: rotate(0deg) scale(1);
+    }
+    75% {
+        transform: rotate(-6deg) scale(1.15);
+    }
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}

@@ -1,0 +1,179 @@
+@use "../global/variables" as *;
+
+.ql-subintro {
+    background: url("/images/intro-bg.png") no-repeat 100% bottom;
+    background-size: auto 90%;
+    padding: 200px 0 100px 0;
+    margin: 0 0 150px 0;
+    position: relative;
+    overflow: visible;
+
+    &::after {
+        position: absolute;
+        bottom: -75px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 1px;
+        width: 50%;
+        background: rgba(#000, 0.2);
+        content: "";
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        min-height: 350px;
+        z-index: 3;
+    }
+
+    &__info {
+        width: 45%;
+    }
+
+    &__title {
+        font-size: 64px;
+        font-weight: 900;
+        color: $primary;
+        margin: 0 0 5px 0;
+        line-height: 1.2;
+    }
+
+    &__desc {
+        width: 70%;
+    }
+
+    &__actions {
+        display: flex;
+        margin: 30px 0 0 0;
+        gap: 15px;
+
+        .co-button {
+            padding: 10px 25px;
+            height: 45px;
+            font-size: 14px;
+
+            &.inverse {
+                background: rgba($primary, 0.1);
+            }
+
+            &:hover {
+                transform: scale(1.05) !important;
+            }
+        }
+    }
+
+    &__video {
+        position: absolute;
+        z-index: 0;
+        display: none;
+        width: 70%;
+        height: 100%;
+        top: 0;
+        left: 30%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    &.hasvideo {
+        position: relative;
+        background: none;
+
+        &::before {
+            position: absolute;
+            z-index: 2;
+            content: "";
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 35%, rgba(255, 255, 255, 0) 80%);
+        }
+
+        .ql-subintro {
+            &__content {
+                position: relative;
+                z-index: 3;
+            }
+            &__video {
+                display: flex;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .ql-subintro {
+        background-size: auto 60%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .ql-subintro {
+        background-size: auto 40%;
+        background-position-y: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ql-subintro {
+        padding: 100px 0 50px 0;
+        height: 800px;
+        background-size: 300px auto;
+        background-position-y: 115%;
+        background: none;
+        height: auto;
+
+        &__info {
+            width: 100%;
+            padding: 0;
+        }
+        &__desc {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ql-subintro {
+        // height: 700px;
+        margin: 0 0 0 0;
+        padding: 90px 0 0 0;
+        height: unset;
+
+        &::after {
+            bottom: -25px;
+        }
+
+        .container {
+            padding: 0;
+        }
+
+        &__content {
+            flex-direction: column;
+            min-height: unset;
+        }
+        &__info {
+            // backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.5);
+            padding: 30px 20px;
+            height: 100%;
+        }
+        &__title {
+            font-size: 24px;
+        }
+        &__desc {
+            font-size: 14px;
+        }
+        &__actions {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .ql-subintro {
+        &__title {
+            font-size: 36px;
+        }
+    }
+}

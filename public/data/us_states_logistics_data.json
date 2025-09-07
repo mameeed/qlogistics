@@ -1,0 +1,394 @@
+[
+	{
+		"id": "US-AL",
+		"name": "Alabama",
+		"cities": ["Birmingham", "Montgomery"],
+		"deliveries": 731,
+		"drivers": 46,
+		"services": ["intermodal", "flatbed", "dry-van", "hazmat"]
+	},
+	{
+		"id": "US-AZ",
+		"name": "Arizona",
+		"cities": ["Phoenix", "Tucson"],
+		"deliveries": 395,
+		"drivers": 18,
+		"services": ["intermodal", "dry-van", "flatbed", "hazmat"]
+	},
+	{
+		"id": "US-AR",
+		"name": "Arkansas",
+		"cities": ["Little Rock", "Fayetteville"],
+		"deliveries": 459,
+		"drivers": 96,
+		"services": ["flatbed", "dry-van", "intermodal"]
+	},
+	{
+		"id": "US-CA",
+		"name": "California",
+		"cities": ["Los Angeles", "San Francisco"],
+		"deliveries": 621,
+		"drivers": 119,
+		"services": ["hazmat", "dry-van", "flatbed"]
+	},
+	{
+		"id": "US-CO",
+		"name": "Colorado",
+		"cities": ["Denver", "Colorado Springs"],
+		"deliveries": 355,
+		"drivers": 120,
+		"services": ["hazmat", "reefer", "flatbed", "dry-van"]
+	},
+	{
+		"id": "US-CT",
+		"name": "Connecticut",
+		"cities": ["Hartford", "New Haven"],
+		"deliveries": 622,
+		"drivers": 87,
+		"services": ["intermodal", "reefer", "flatbed"]
+	},
+	{
+		"id": "US-DE",
+		"name": "Delaware",
+		"cities": ["Wilmington", "Dover"],
+		"deliveries": 614,
+		"drivers": 91,
+		"services": ["flatbed", "reefer", "intermodal", "hazmat"]
+	},
+	{
+		"id": "US-FL",
+		"name": "Florida",
+		"cities": ["Miami", "Orlando"],
+		"deliveries": 957,
+		"drivers": 51,
+		"services": ["flatbed", "hazmat"]
+	},
+	{
+		"id": "US-GA",
+		"name": "Georgia",
+		"cities": ["Atlanta", "Savannah"],
+		"deliveries": 457,
+		"drivers": 33,
+		"services": ["hazmat", "dry-van"]
+	},
+	{
+		"id": "US-HI",
+		"name": "Hawaii",
+		"cities": ["Honolulu", "Hilo"],
+		"deliveries": 829,
+		"drivers": 65,
+		"services": ["flatbed", "dry-van", "hazmat"]
+	},
+	{
+		"id": "US-ID",
+		"name": "Idaho",
+		"cities": ["Boise", "Idaho Falls"],
+		"deliveries": 974,
+		"drivers": 54,
+		"services": ["dry-van", "intermodal", "hazmat", "reefer"]
+	},
+	{
+		"id": "US-IL",
+		"name": "Illinois",
+		"cities": ["Chicago", "Springfield"],
+		"deliveries": 1056,
+		"drivers": 23,
+		"services": ["dry-van", "reefer"]
+	},
+	{
+		"id": "US-IN",
+		"name": "Indiana",
+		"cities": ["Indianapolis", "Fort Wayne"],
+		"deliveries": 890,
+		"drivers": 58,
+		"services": ["intermodal", "dry-van", "reefer", "hazmat"]
+	},
+	{
+		"id": "US-IA",
+		"name": "Iowa",
+		"cities": ["Des Moines", "Cedar Rapids"],
+		"deliveries": 1184,
+		"drivers": 33,
+		"services": ["intermodal", "dry-van", "hazmat"]
+	},
+	{
+		"id": "US-KS",
+		"name": "Kansas",
+		"cities": ["Wichita", "Topeka"],
+		"deliveries": 698,
+		"drivers": 46,
+		"services": ["reefer", "hazmat", "flatbed"]
+	},
+	{
+		"id": "US-KY",
+		"name": "Kentucky",
+		"cities": ["Louisville", "Lexington"],
+		"deliveries": 1182,
+		"drivers": 113,
+		"services": ["intermodal", "reefer", "flatbed"]
+	},
+	{
+		"id": "US-LA",
+		"name": "Louisiana",
+		"cities": ["New Orleans", "Baton Rouge"],
+		"deliveries": 471,
+		"drivers": 33,
+		"services": ["dry-van", "reefer", "flatbed"]
+	},
+	{
+		"id": "US-ME",
+		"name": "Maine",
+		"cities": ["Portland", "Bangor"],
+		"deliveries": 488,
+		"drivers": 22,
+		"services": ["flatbed", "intermodal"]
+	},
+	{
+		"id": "US-MD",
+		"name": "Maryland",
+		"cities": ["Baltimore", "Annapolis"],
+		"deliveries": 446,
+		"drivers": 64,
+		"services": ["intermodal", "hazmat", "reefer"]
+	},
+	{
+		"id": "US-MA",
+		"name": "Massachusetts",
+		"cities": ["Boston", "Worcester"],
+		"deliveries": 919,
+		"drivers": 112,
+		"services": ["intermodal", "flatbed"]
+	},
+	{
+		"id": "US-MI",
+		"name": "Michigan",
+		"cities": ["Detroit", "Grand Rapids"],
+		"deliveries": 469,
+		"drivers": 36,
+		"services": ["intermodal", "hazmat", "flatbed", "dry-van"]
+	},
+	{
+		"id": "US-MN",
+		"name": "Minnesota",
+		"cities": ["Minneapolis", "St. Paul"],
+		"deliveries": 1120,
+		"drivers": 103,
+		"services": ["intermodal", "hazmat"]
+	},
+	{
+		"id": "US-MS",
+		"name": "Mississippi",
+		"cities": ["Jackson", "Gulfport"],
+		"deliveries": 666,
+		"drivers": 43,
+		"services": ["intermodal", "reefer", "dry-van"]
+	},
+	{
+		"id": "US-MO",
+		"name": "Missouri",
+		"cities": ["St. Louis", "Kansas City"],
+		"deliveries": 295,
+		"drivers": 84,
+		"services": ["flatbed", "hazmat", "reefer"]
+	},
+	{
+		"id": "US-MT",
+		"name": "Montana",
+		"cities": ["Billings", "Missoula"],
+		"deliveries": 334,
+		"drivers": 90,
+		"services": ["dry-van", "hazmat", "flatbed"]
+	},
+	{
+		"id": "US-NE",
+		"name": "Nebraska",
+		"cities": ["Omaha", "Lincoln"],
+		"deliveries": 681,
+		"drivers": 88,
+		"services": ["dry-van", "flatbed", "reefer", "hazmat"]
+	},
+	{
+		"id": "US-NV",
+		"name": "Nevada",
+		"cities": ["Las Vegas", "Reno"],
+		"deliveries": 664,
+		"drivers": 12,
+		"services": ["flatbed", "hazmat", "reefer"]
+	},
+	{
+		"id": "US-NH",
+		"name": "New Hampshire",
+		"cities": ["Manchester", "Nashua"],
+		"deliveries": 1053,
+		"drivers": 57,
+		"services": ["hazmat", "flatbed"]
+	},
+	{
+		"id": "US-NJ",
+		"name": "New Jersey",
+		"cities": ["Newark", "Jersey City"],
+		"deliveries": 426,
+		"drivers": 57,
+		"services": ["hazmat", "reefer", "dry-van"]
+	},
+	{
+		"id": "US-NM",
+		"name": "New Mexico",
+		"cities": ["Albuquerque", "Santa Fe"],
+		"deliveries": 1082,
+		"drivers": 71,
+		"services": ["reefer", "dry-van", "flatbed", "intermodal"]
+	},
+	{
+		"id": "US-NY",
+		"name": "New York",
+		"cities": ["New York City", "Buffalo"],
+		"deliveries": 606,
+		"drivers": 34,
+		"services": ["hazmat", "dry-van", "intermodal", "reefer"]
+	},
+	{
+		"id": "US-NC",
+		"name": "North Carolina",
+		"cities": ["Charlotte", "Raleigh"],
+		"deliveries": 504,
+		"drivers": 57,
+		"services": ["dry-van", "flatbed", "reefer"]
+	},
+	{
+		"id": "US-ND",
+		"name": "North Dakota",
+		"cities": ["Fargo", "Bismarck"],
+		"deliveries": 777,
+		"drivers": 107,
+		"services": ["flatbed", "dry-van"]
+	},
+	{
+		"id": "US-OH",
+		"name": "Ohio",
+		"cities": ["Columbus", "Cleveland"],
+		"deliveries": 456,
+		"drivers": 63,
+		"services": ["hazmat", "flatbed"]
+	},
+	{
+		"id": "US-OK",
+		"name": "Oklahoma",
+		"cities": ["Oklahoma City", "Tulsa"],
+		"deliveries": 815,
+		"drivers": 33,
+		"services": ["dry-van", "flatbed", "reefer"]
+	},
+	{
+		"id": "US-OR",
+		"name": "Oregon",
+		"cities": ["Portland", "Eugene"],
+		"deliveries": 862,
+		"drivers": 93,
+		"services": ["hazmat", "intermodal"]
+	},
+	{
+		"id": "US-PA",
+		"name": "Pennsylvania",
+		"cities": ["Philadelphia", "Pittsburgh"],
+		"deliveries": 968,
+		"drivers": 37,
+		"services": ["intermodal", "reefer"]
+	},
+	{
+		"id": "US-RI",
+		"name": "Rhode Island",
+		"cities": ["Providence", "Warwick"],
+		"deliveries": 1004,
+		"drivers": 33,
+		"services": ["dry-van", "intermodal", "reefer"]
+	},
+	{
+		"id": "US-SC",
+		"name": "South Carolina",
+		"cities": ["Charleston", "Columbia"],
+		"deliveries": 829,
+		"drivers": 100,
+		"services": ["reefer", "flatbed", "intermodal", "hazmat"]
+	},
+	{
+		"id": "US-SD",
+		"name": "South Dakota",
+		"cities": ["Sioux Falls", "Rapid City"],
+		"deliveries": 284,
+		"drivers": 33,
+		"services": ["flatbed", "intermodal", "reefer"]
+	},
+	{
+		"id": "US-TN",
+		"name": "Tennessee",
+		"cities": ["Nashville", "Memphis"],
+		"deliveries": 597,
+		"drivers": 38,
+		"services": ["flatbed", "dry-van"]
+	},
+	{
+		"id": "US-TX",
+		"name": "Texas",
+		"cities": ["Houston", "Dallas"],
+		"deliveries": 1123,
+		"drivers": 46,
+		"services": ["reefer", "flatbed", "intermodal", "hazmat"]
+	},
+	{
+		"id": "US-UT",
+		"name": "Utah",
+		"cities": ["Salt Lake City", "Provo"],
+		"deliveries": 363,
+		"drivers": 49,
+		"services": ["intermodal", "flatbed", "reefer", "hazmat"]
+	},
+	{
+		"id": "US-VT",
+		"name": "Vermont",
+		"cities": ["Burlington", "Montpelier"],
+		"deliveries": 784,
+		"drivers": 16,
+		"services": ["dry-van", "reefer", "intermodal"]
+	},
+	{
+		"id": "US-VA",
+		"name": "Virginia",
+		"cities": ["Richmond", "Virginia Beach"],
+		"deliveries": 539,
+		"drivers": 24,
+		"services": ["intermodal", "reefer", "hazmat"]
+	},
+	{
+		"id": "US-WA",
+		"name": "Washington",
+		"cities": ["Seattle", "Spokane"],
+		"deliveries": 289,
+		"drivers": 24,
+		"services": ["flatbed", "dry-van"]
+	},
+	{
+		"id": "US-WV",
+		"name": "West Virginia",
+		"cities": ["Charleston", "Huntington"],
+		"deliveries": 434,
+		"drivers": 53,
+		"services": ["flatbed", "intermodal", "reefer"]
+	},
+	{
+		"id": "US-WI",
+		"name": "Wisconsin",
+		"cities": ["Milwaukee", "Madison"],
+		"deliveries": 693,
+		"drivers": 28,
+		"services": ["flatbed", "reefer"]
+	},
+	{
+		"id": "US-WY",
+		"name": "Wyoming",
+		"cities": ["Cheyenne", "Casper"],
+		"deliveries": 415,
+		"drivers": 34,
+		"services": ["flatbed", "intermodal", "hazmat"]
+	}
+]

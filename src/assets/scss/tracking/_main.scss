@@ -1,0 +1,269 @@
+@use "../global/variables" as *;
+
+.ql-tracking {
+    max-height: 450px;
+    transition: 0.3s;
+    overflow: visible;
+    margin: 0 0 90px 0;
+
+    .ql-trackform {
+        display: flex;
+        align-items: center;
+        height: 500px;
+
+        &__title {
+            font-size: 32px;
+            font-weight: 900;
+            color: $primary;
+            line-height: 1.2;
+        }
+
+        &__description {
+            font-size: 18px;
+            color: $text-secondary;
+        }
+
+        &__input {
+            width: 300px;
+
+            &-wrapper {
+                display: flex;
+                margin: 30px 0 0 0;
+            }
+        }
+
+        &__image {
+            width: 750px;
+            height: 500px;
+            object-fit: contain;
+            margin: 0 0 0 auto;
+            transition: 0.3s;
+            position: relative;
+            z-index: 3;
+            align-self: flex-end;
+        }
+    }
+
+    .ql-trackinfo {
+        background: #fff;
+        box-shadow: 0 0 50px 25px rgba(0, 0, 0, 0.05);
+        padding: 50px 50% 50px 50px;
+        margin: -50px 0 0 0;
+        position: relative;
+        transition: 0.3s;
+        opacity: 0;
+        visibility: hidden;
+
+        &__map {
+            position: absolute;
+            top: 100px;
+            right: 50px;
+            bottom: 50px;
+            width: calc(50% - 50px);
+            display: flex;
+            overflow: hidden;
+
+            iframe {
+                display: flex;
+                border: none;
+                transition: 0.3s;
+                filter: grayscale(1);
+
+                &:hover {
+                    filter: revert;
+                }
+            }
+        }
+
+        &__list {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            row-gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        &__title {
+            font-size: 24px;
+            font-weight: 900;
+            color: $primary;
+            width: 100%;
+        }
+
+        &__status {
+            padding: 5px 15px;
+            border: 3px solid #424242;
+            border-radius: 6px;
+            font-size: 16px;
+            text-align: center;
+            font-family: "Monda", monospace;
+            font-weight: 600;
+            background: #f7f7f7;
+            margin: 5px 0 0 0;
+            text-transform: capitalize;
+
+            &.red {
+                border-color: #b52828;
+                background: rgba(#b52828, 0.1);
+                color: #b52828;
+            }
+            &.green {
+                border-color: #2a902a;
+                background: rgba(#2a902a, 0.1);
+                color: #2a902a;
+            }
+        }
+
+        &__item {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            text-transform: capitalize;
+
+            &-title {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 14px;
+                font-weight: bold;
+                color: $primary;
+            }
+
+            &-icon {
+                width: 20px;
+                height: 20px;
+                display: flex;
+            }
+
+            &.w-100 {
+                width: 100%;
+                margin: 0 0 10px 0;
+            }
+        }
+    }
+
+    &.opened {
+        max-height: 200vh;
+        padding: 0 0 90px 0;
+        margin: 0;
+
+        .ql-trackform {
+            &__image {
+                width: 400px;
+                transform: translateY(150px);
+            }
+        }
+
+        .ql-trackinfo {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -2;
+        width: 600px;
+        height: 600px;
+        background: $primary;
+        opacity: 0.05;
+        transform: rotate(45deg);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -2;
+        width: 200px;
+        height: 200px;
+        background: $primary;
+        opacity: 0.05;
+        transform: rotate(45deg);
+    }
+}
+
+.join-us.qltrck {
+    margin: 200px 0 0 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .ql-track {
+        .ql-trackform {
+            &__title {
+                font-size: 28px;
+            }
+        }
+    }
+    .ql-trackinfo {
+        padding: 20px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &__map {
+            position: static !important;
+            width: 100% !important;
+            height: 400px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ql-track {
+    }
+    .ql-trackform {
+        justify-content: center;
+        gap: 40px;
+        flex-direction: column;
+        &__title {
+            font-size: 24px;
+        }
+        &__description {
+            font-size: 16px;
+        }
+        &__input {
+        }
+    }
+    .ql-tracking .ql-trackform__image {
+        width: 450px;
+        height: 250px;
+    }
+    .ql-tracking.opened .ql-trackform__image {
+        width: 350px;
+        height: 200px;
+        transform: translate(100px, 20px);
+    }
+    .ql-tracking {
+        &::after {
+            width: 450px;
+            height: 450px;
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .ql-trackform {
+        &__title {
+            font-size: 20px;
+        }
+        &__description {
+            font-size: 14px;
+        }
+    }
+    .ql-trackinfo {
+        &__plate {
+            font-size: 20px;
+        }
+    }
+    .ql-tracking .ql-trackform__input {
+        max-width: 300px;
+        width: 100%;
+    }
+    .ql-trackinfo__item {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "status": "success",
+    "data": {
+        "vehicleId": 1773434,
+        "vehicleData": {
+            "id": 1773434,
+            "company_id": 425648,
+            "number": "Unit 1009",
+            "status": "active",
+            "ifta": true,
+            "vin": "3AKJHHDR6LSLK0122",
+            "make": "FREIGHTLINER",
+            "model": "New Cascadia 126\" Sleepercab",
+            "year": "2020",
+            "license_plate_state": "OH",
+            "license_plate_number": "PXB2550",
+            "metric_units": false,
+            "fuel_type": "diesel",
+            "prevent_auto_odometer_entry": false,
+            "notes": "",
+            "driver_facing_camera": 1,
+            "incab_audio_recording": 1,
+            "incab_alert_live_stream_enable": -1,
+            "group_ids": [150658],
+            "created_at": "2024-09-25T18:14:24Z",
+            "updated_at": "2025-05-08T16:21:55Z",
+            "permanent_driver": {
+                "id": 6341950,
+                "first_name": "Mohsin Ali",
+                "last_name": "Malik"
+            },
+            "eld_device": {
+                "id": 1495598,
+                "identifier": "AABL36SE212872",
+                "model": "lbb-3.6ca"
+            },
+            "current_driver": null,
+            "external_ids": []
+        },
+        "vehicleLocation": {
+            "vehicles": [
+                {
+                    "vehicle": {
+                        "id": 1773434,
+                        "number": "Unit 1009",
+                        "year": "2020",
+                        "make": "FREIGHTLINER",
+                        "model": "New Cascadia 126\" Sleepercab",
+                        "vin": "3AKJHHDR6LSLK0122",
+                        "current_location": {
+                            "lat": 39.2776124,
+                            "lon": -84.4217361,
+                            "bearing": 337.965393,
+                            "located_at": "2025-05-12T01:13:17Z",
+                            "city": "Sharonville",
+                            "state": "OH",
+                            "rg_km": 1.2830119777106,
+                            "rg_brg": 318.30545488653,
+                            "rg_match": true,
+                            "kph": 112.21,
+                            "vehicle_state": "moving",
+                            "current_location": "3023 E Kemper Rd, Cincinnati, OH 45241"
+                        }
+                    }
+                }
+            ],
+            "pagination": {
+                "per_page": 25,
+                "page_no": 1,
+                "total": 1
+            }
+        }
+    }
+}

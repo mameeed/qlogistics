@@ -1,0 +1,245 @@
+@use "../global/variables" as *;
+
+.qlblog {
+    padding: 45px 0 90px 0;
+
+    &__title {
+        font-size: 44px;
+        line-height: 1.2;
+        color: $text;
+        max-width: 600px;
+    }
+
+    &__description {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        color: $text-secondary;
+        max-width: 700px;
+    }
+
+    &__cards {
+        display: grid;
+        column-gap: 40px;
+        row-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 40px 0 0 0;
+    }
+
+    &__btn {
+        margin: 50px 0 0 auto;
+    }
+
+    .blogcard {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        max-height: 300px;
+        transition: 0.3s;
+
+        &__image {
+            width: 280px;
+            height: 180px;
+            flex-shrink: 0;
+            object-fit: cover;
+            transition: 0.3s;
+            background: #000;
+            filter: grayscale(1);
+        }
+
+        &__content {
+            // flex-shrink: 0;
+            flex-grow: 1;
+            display: flex;
+            flex-flow: column;
+            gap: 5px;
+        }
+
+        &__date {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            gap: 5px;
+            opacity: 0.7;
+
+            &-icon {
+                width: 18px;
+                height: 18px;
+            }
+
+            &-label {
+                margin: 0;
+                padding: 0;
+                line-height: 1;
+                font-weight: 600;
+                color: $primary;
+                margin: 2px 0 0;
+            }
+        }
+
+        &__desc {
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            line-clamp: 3;
+            box-orient: vertical;
+        }
+
+        &__title {
+            line-height: 1.4;
+            transition: 0.3s;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -moz-box;
+            -moz-box-orient: vertical;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            line-clamp: 2;
+            box-orient: vertical;
+        }
+
+        &__btn {
+            display: flex;
+            align-self: flex-start;
+            align-items: center;
+            gap: 10px;
+            color: $primary;
+            margin: 15px 0 0 0;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &-icon {
+                width: 20px;
+                height: 20px;
+            }
+
+            &:hover {
+                gap: 20px;
+            }
+        }
+
+        &:first-child {
+            grid-row: 1 / 4;
+            flex-direction: column;
+            max-height: unset;
+
+            .blogcard {
+                &__image {
+                    width: 100%;
+                    height: 320px;
+                }
+
+                &__content {
+                    gap: 10pFx;
+                }
+
+                &__title {
+                    font-size: 28px;
+                    line-height: 1.4;
+
+                    overflow: unset;
+                    text-overflow: unset;
+                    display: unset;
+                    -webkit-line-clamp: unset;
+                    line-clamp: unset;
+                    box-orient: unset;
+                }
+
+                &__desc {
+                    font-size: 18px;
+                    line-height: 1.6;
+                    -webkit-line-clamp: 4;
+                    line-clamp: 4;
+                }
+            }
+
+            &:has(a:hover) {
+                .blogcard {
+                    &__image {
+                        filter: revert;
+                    }
+
+                    &__title {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(n + 2) {
+            cursor: pointer;
+
+            &:hover {
+                .blogcard {
+                    &__image {
+                        filter: revert;
+                        transform: scale(1.01);
+                    }
+
+                    &__title {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(3),
+        &:nth-child(4) {
+            border-top: 1px solid rgba($text-secondary, 0.2);
+            padding: 20px 0 0;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .qlblog {
+        &__cards {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .qlblog {
+        padding: 0 0 45px 0;
+        .blogcard {
+            &__content {
+                gap: 10px;
+            }
+            .blogcard__title {
+                font-size: 20px !important;
+            }
+            .blogcard__desc {
+                font-size: 16px !important;
+                -webkit-line-clamp: 4 !important;
+                line-clamp: 4 !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .qlblog {
+        &__title {
+            font-size: 36px;
+        }
+        &__description {
+            font-size: 16px;
+        }
+        .blogcard {
+            flex-direction: column;
+            max-height: unset;
+            &__image {
+                width: 100%;
+                height: 200px !important;
+            }
+        }
+    }
+}

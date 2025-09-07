@@ -1,0 +1,316 @@
+@use "../global/variables" as *;
+
+.qlmodal {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    &__holder {
+        max-height: 100vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        background: #ffffff;
+        opacity: 0;
+        height: 100%;
+        width: 600px;
+        will-change: transform;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &__header {
+        margin: 0 0 40px 0;
+
+        &-title {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            text-align: center;
+            font-weight: 900;
+            color: $primary;
+            margin: 0 0 10px 0;
+        }
+        &-desc {
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.2;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        &-button {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            padding: 5px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+
+            img {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                transform: rotate(45deg);
+                object-fit: contain;
+            }
+
+            &:hover {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        width: 100%;
+        margin: 15px 0 0 0;
+        padding: 5px;
+    }
+
+    &__body {
+        flex-grow: 1;
+        overflow: auto;
+        padding: 8px 0 0;
+
+        &.getquote {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            column-gap: 15px;
+
+            .gquote {
+                &__btn {
+                    margin: 0 0 0 auto;
+                    grid-column: 2 / 3;
+                }
+
+                &__input {
+                    &:nth-child(9),
+                    &:nth-child(5),
+                    &:nth-child(6) {
+                        grid-column: 1 / 3;
+                    }
+                }
+            }
+        }
+
+        &.applyd {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .applyd {
+                &__inputs {
+                    padding: 8px 0 0;
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 20px;
+                    column-gap: 15px;
+                    flex-grow: 1;
+                    overflow: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 5px;
+                        height: 5px;
+                    }
+                }
+
+                &__input {
+                    &:nth-child(7),
+                    &:nth-child(8),
+                    &:nth-child(9),
+                    &:nth-child(10),
+                    &:nth-child(11) {
+                        grid-column: 1 / 3;
+                    }
+                }
+
+                &__title {
+                    grid-column: 1 / 3;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 -10px 0;
+                }
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+        }
+    }
+
+    &.opened {
+        opacity: 1;
+        visibility: visible;
+
+        .qlmodal__holder {
+            animation: fadeLeft 0.6s 0.3s ease 1 forwards;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .qlmodal {
+        padding: 40px;
+
+        &__holder {
+            transform: none;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            height: auto;
+            height: 100%;
+        }
+
+        &__header {
+            &-title {
+                font-size: 24px;
+            }
+
+            &-button {
+                position: absolute;
+                top: 40px;
+                right: 40px;
+                width: 50px;
+                padding: 5px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    object-fit: contain;
+                }
+
+                &:hover {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .qlmodal {
+        padding: 30px;
+
+        &__holder {
+            padding: 40px 20px 20px 20px;
+            justify-content: flex-start;
+        }
+
+        &__header {
+            background: #fff;
+            margin: 0 0 10px 0;
+
+            &-title {
+                font-size: 20px;
+                margin: 0 0 5px 0;
+            }
+
+            &-desc {
+                width: 100%;
+            }
+
+            &-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+
+                &:hover {
+                    transform: none;
+                }
+            }
+        }
+
+        &__body {
+            flex-grow: 1;
+            overflow-y: auto;
+
+            &.applyd {
+                gap: 10px;
+
+                .applyd {
+                    &__inputs {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    &__title {
+                        margin: 10px 0 -5px 0;
+                    }
+                }
+            }
+
+            &.getquote {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+
+                .gquote {
+                    &__btn {
+                        margin: 0 0 0 auto;
+                        grid-column: 2 / 3;
+                        flex-shrink: 0;
+                    }
+
+                    &__input {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &::-webkit-scrollbar {
+                width: 0;
+                height: 0;
+            }
+        }
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

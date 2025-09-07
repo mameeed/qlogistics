@@ -1,0 +1,196 @@
+@use "../global/variables" as *;
+
+.stats {
+    padding: 50px 0;
+
+    &__title {
+        font-size: 44px;
+        line-height: 1.2;
+        text-align: center;
+        color: $text;
+    }
+
+    &__desc {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        color: $text-secondary;
+        margin: 0 0 40px 0;
+    }
+
+    &__content {
+        display: flex;
+        gap: 50px;
+    }
+
+    &__list {
+        display: grid;
+        width: 50%;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    &__interactive {
+        flex-grow: 1;
+        align-self: stretch;
+        position: relative;
+    }
+
+    &__image {
+        position: absolute;
+
+        &:nth-child(1) {
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            z-index: 2;
+            box-shadow: 0 0 50px 5px rgba(#000, 0.15);
+        }
+        &:nth-child(2) {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 70%;
+            object-fit: cover;
+            z-index: 1;
+            box-shadow: 0 0 25px 5px rgba(#000, 0.15);
+        }
+        &:nth-child(3) {
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 140px;
+            object-fit: cover;
+            z-index: 2;
+            box-shadow: 0 0 50px 5px rgba(#000, 0.15);
+        }
+    }
+
+    &__contact {
+        background: $primary;
+        margin: 90px 0 0 0;
+        padding: 90px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &-title {
+            font-size: 42px;
+            font-weight: bold;
+            color: #fff;
+            margin: 0 0 10px 0;
+        }
+
+        &-desc {
+            font-size: 24px;
+            font-weight: 100;
+            color: #fff;
+            width: 600px;
+            line-height: 1.4;
+            text-align: center;
+        }
+
+        &-actions {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0 0 0;
+        }
+    }
+
+    .statcard {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+
+        &__count {
+            font-size: 26px;
+            font-weight: 900;
+            color: $primary;
+            gap: 5px;
+            white-space: nowrap;
+
+            span {
+                font-size: 38px;
+            }
+        }
+
+        &__title {
+            font-size: 16px;
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        &__icon {
+            width: 56px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .stats {
+        &__content {
+            flex-direction: column-reverse;
+        }
+        &__interactive {
+            width: 100%;
+            height: 400px;
+            margin: 0 0 30px 0;
+        }
+        &__list {
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .stats {
+        &__title {
+            font-size: 36px;
+        }
+        &__desc {
+            font-size: 16px;
+        }
+        &__contact {
+            padding: 50px 30px;
+            h2 {
+                font-size: 32px;
+                text-align: center;
+            }
+            &-desc {
+                width: 100%;
+                font-size: 16px;
+            }
+            &-actions {
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .stats {
+        &__interactive {
+            margin: 0 0 20px 0;
+            height: 300px;
+            .stats__image {
+                &:nth-child(1) {
+                    width: 150px;
+                    height: 100px;
+                }
+                &:nth-child(3) {
+                    width: 150px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,218 @@
+@use "../global/variables" as *;
+
+.comments {
+    padding: 90px 0;
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        margin: 0 0 48px;
+    }
+    &__title {
+        font-size: 48px;
+        line-height: 1.2;
+        text-align: center;
+        color: $text;
+        max-width: 600px;
+    }
+    &__description {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+        color: $text-secondary;
+        max-width: 700px;
+    }
+    &__slide {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 80px;
+        & > p {
+            font-size: 18px;
+            line-height: 1.5;
+            color: $text-secondary;
+            text-align: center;
+            margin: 0 0 32px;
+        }
+    }
+    &__stars {
+        margin: 0 0 16px;
+    }
+
+    &__slider {
+        margin: 0 0 50px 0;
+    }
+    &__author {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        h3 {
+            font-size: 18px;
+            line-height: 1.5;
+            color: $primary;
+        }
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: $text-secondary;
+        }
+    }
+
+    .cm-marquee {
+        width: 280px;
+        height: 80px;
+        flex-shrink: 0;
+        border: 1px solid rgba($primary, 0.2);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: flex;
+            padding: 12px;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        &__list {
+            display: flex;
+            width: max-content;
+            animation: marquee 90s linear infinite;
+            gap: 20px;
+
+            &.reverse {
+                align-self: flex-end;
+                animation: marquee-reverse 90s linear infinite;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .comments {
+        padding: 60px 0;
+    }
+
+    .cm-marquee {
+        width: 220px;
+        height: 70px;
+
+        img {
+            padding: 10px;
+        }
+
+        &__list {
+            animation: marquee 70s linear infinite;
+
+            &.reverse {
+                animation: marquee-reverse 70s linear infinite;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .comments {
+        &__title {
+            font-size: 36px;
+        }
+        &__description {
+            font-size: 16px;
+        }
+        &__slider {
+            margin: 0 0 30px 0;
+        }
+        &__slide {
+            padding: 24px 40px;
+            & > p {
+                font-size: 16px;
+            }
+        }
+
+        .cm-marquee {
+            width: 180px;
+            height: 80px;
+
+            img {
+                padding: 5px;
+            }
+
+            &__list {
+                animation: marquee 50s linear infinite;
+
+                &.reverse {
+                    animation: marquee-reverse 50s linear infinite;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .comments {
+        &__title {
+            font-size: 28px;
+        }
+        &__description {
+            font-size: 14px;
+        }
+        &__slide {
+            padding: 24px 20px;
+            & > p {
+                font-size: 14px;
+            }
+        }
+
+        .cm-marquee {
+            width: 110px;
+            height: 50px;
+
+            img {
+                padding: 0;
+            }
+
+            &__wrapper {
+                padding: 0;
+            }
+
+            &__list {
+                animation: marquee 40s linear infinite;
+
+                &.reverse {
+                    animation: marquee-reverse 40s linear infinite;
+                }
+            }
+        }
+    }
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50%);
+    }
+}

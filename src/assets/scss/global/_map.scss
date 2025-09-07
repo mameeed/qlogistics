@@ -1,0 +1,141 @@
+@use "./variables" as *;
+.us-map {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 0 90px 0;
+
+    &__svg {
+        width: 70%;
+        padding: 0 20px 0 0;
+        flex-shrink: 0;
+
+        svg {
+            width: 100%;
+            height: auto;
+
+            path {
+                fill: $primary;
+                stroke: #fff;
+                stroke-width: 1px;
+                transition: all $transition-duration ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    &__pop {
+        flex-grow: 1;
+
+        &-box {
+            background: rgba($primary, 0.05);
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        &-item {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            &.w-50 {
+                width: 40%;
+            }
+        }
+
+        &-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: $primary;
+            margin: 0 0 5px 0;
+        }
+
+        &-content {
+            font-size: 32px;
+            font-weight: 900;
+            color: $text;
+            line-height: 1.2;
+            animation: reappear 0.8s linear 1 forwards;
+        }
+
+        &-services {
+            display: flex;
+            gap: 10px;
+
+            img {
+                display: flex;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        &-btn {
+            margin: auto 0 0 0;
+        }
+
+        &.disappearing {
+            .us-map__pop-content {
+                animation: disappear 0.8s linear 1 forwards;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .us-map {
+        padding: 0;
+        flex-direction: column-reverse;
+        &__svg {
+            width: 100%;
+            padding: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .us-map {
+        &__pop {
+            &-box {
+                padding: 24px;
+                gap: 16px;
+            }
+            &-content {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@keyframes disappear {
+    0% {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+    100% {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0%;
+    }
+}
+
+@keyframes reappear {
+    100% {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+    }
+    0% {
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0%;
+    }
+}

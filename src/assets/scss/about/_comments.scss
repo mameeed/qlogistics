@@ -1,0 +1,61 @@
+@use "../global/variables" as *;
+
+.ql-comments {
+    .comments {
+        &__header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            margin: 0 0 30px 0;
+            position: relative;
+            flex-shrink: 0;
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                background: $primary;
+                height: 1px;
+                content: "";
+                width: 60%;
+            }
+        }
+
+        &__title {
+            font-size: 44px;
+            line-height: 1.2;
+            color: $text;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        &__description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: $text-secondary;
+            max-width: 500px;
+            text-align: left;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ql-comments {
+        .comments {
+            &__header {
+                &::after {
+                    top: 45%;
+                }
+            }
+            &__title {
+                font-size: 36px;
+                margin: 0 0 10px 0;
+            }
+            &__description {
+                font-size: 14px;
+            }
+        }
+    }
+}
