@@ -7,8 +7,8 @@ import vueDevTools from "vite-plugin-vue-devtools";
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [vue(), vueDevTools()],
-    base: process.env.BASE_URL,
-    publicPath: process.env.NODE_ENV === "production" ? "/qlogistics/" : "/",
+    base: "/qlogistics/",
+    // base: process.env.BASE_URL,
     resolve: {
         alias: {
             "@": fileURLToPath(new URL("./src", import.meta.url)),
