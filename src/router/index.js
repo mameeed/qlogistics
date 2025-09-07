@@ -8,7 +8,7 @@ import ContactView from "@/views/contact.vue";
 import ApplytView from "@/views/applytodrive.vue";
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes: [
         {
             path: "/",
